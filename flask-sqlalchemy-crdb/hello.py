@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, request, flash, url_for, redirect, \
-     render_template, abort
+     render_template, abort, session
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy.orm
 from cockroachdb.sqlalchemy import run_transaction
@@ -64,4 +64,10 @@ def update_done():
 
 
 if __name__ == '__main__':
+    # # app.config['SECRET_KEY'] = "<some key>" 
+    # app.secret_key = 'super secret key'
+    # app.config['SESSION_TYPE'] = 'filesystem'
+    # app.config['SESSION_PERMANENT']= False
+    # # sess.init_app(app)
+    app.debug = True
     app.run()
